@@ -1,0 +1,33 @@
+server:
+  port: 9000
+spring:
+  deserializer:
+    key:
+     delegate:
+      class: org.springframework.kafka.support.serializer.JsonDeserialize
+    value:  
+      delegate:
+        class: org.springframework.kafka.support.serializer.JsonDeserializer
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer2
+#      properties:
+#          spring:
+#              deserializer:
+#                  value:
+#                      delegate:
+#                          class: my.delegate.NameOfClass      
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#  json:
+#    trusted:
+#      packages: com.demo
+      
+      
