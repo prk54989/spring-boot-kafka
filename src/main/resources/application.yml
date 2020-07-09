@@ -9,6 +9,10 @@ spring:
       delegate:
         class: org.springframework.kafka.support.serializer.JsonDeserializer
   kafka:
+    properties:
+       partition:
+          assignment:
+             strategy: org.apache.kafka.clients.consumer.RoundRobinAssignor
     consumer:
       bootstrap-servers: localhost:9092
       group-id: group_id
@@ -30,4 +34,4 @@ spring:
 #    trusted:
 #      packages: com.demo
       
-      
+ #     
