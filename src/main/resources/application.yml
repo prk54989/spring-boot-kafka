@@ -34,4 +34,5 @@ spring:
 #    trusted:
 #      packages: com.demo
       
- #     
+ #     spring.kafka.listener.concurrency=10
+ # #spring.kafka.consumer.properties.partition.assignment.strategy=org.apache.kafka.clients.consumer.RoundRobinAssignor
